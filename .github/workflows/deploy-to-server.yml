@@ -11,28 +11,29 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '20' # 设置 Node.js 版本
+          node-version: '20.17.0' # 设置你需要的 Node.js 版本
 
       - name: Install pnpm
         run: |
-          npm install -g pnpm  # 全局安装 pnpm
+          npm install -g pnpm@9.9.0
 
       - name: Install dependencies
-        run: pnpm install # 使用 pnpm 安装依赖
+        run: pnpm install
 
       - name: Build Project
         run: pnpm build
 
-      - name: Deploy With FTP
-        uses: samuelmeuli/action-ftp-deploy@v1.1.0
+      - name: Update With FTP
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: ${{ secrets.FTP_SERVER }} # FTP 服务器地址
-          username: ${{ secrets.FTP_USERNAME }} # FTP 用户名
-          password: ${{ secrets.FTP_PASSWORD }} # FTP 密码
-          local-dir: ./dist # 本地打包后的文件目录
-          remote-dir: /wwwroot # 远程服务器目录
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: 'dist'
+          remoteDir: 'wwwroot'
+          options: '--delete --asci'
