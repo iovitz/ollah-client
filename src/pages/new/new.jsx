@@ -143,7 +143,7 @@ const NewPage = () => {
               >
                 <Button key={item.name} className="h-16 w-16 rounded-full">
                   <img
-                    src={`/assets/icon/${item.icon}.svg`}
+                    src={`/icon/${item.icon}.svg`}
                     className="w-full"
                     alt=""
                   />
