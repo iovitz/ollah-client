@@ -12,6 +12,7 @@ import LoginPage from "../pages/login/login.jsx";
 import DashboardPage from "../pages/dashboard/dashboard.jsx";
 import NewPage from "../pages/new/new.jsx";
 import Update from "@/pages/update/update.jsx";
+import Infomation from "@/pages/infomation/infomation.jsx";
 
 const routes = [
   {
@@ -29,6 +30,10 @@ const routes = [
   {
     path: "/dashboard/",
     component: DashboardPage,
+  },
+  {
+    path: "/infomation/",
+    component: Infomation,
   },
   {
     path: "/about/",

@@ -16,7 +16,11 @@ const SettingsPage = () => {
       <Navbar title="Settings" size={20} />
 
       <List mediaList inset strong>
-        <ListItem title={user.nickname} text="Hello, NiceToMeetT">
+        <ListItem
+          title={user.nickname}
+          text="Hello, NiceToMeetT"
+          href="/infomation/"
+        >
           <img
             slot="media"
             alt="avatar"
