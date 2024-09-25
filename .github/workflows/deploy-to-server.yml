@@ -13,15 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # 指定版本Node
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.17.0' # 设置你需要的 Node.js 版本
+          node-version: '20.17.0'
 
+      # 安装指定版本pnpm(避免lock文件变更)
       - name: Install pnpm
         run: |
           npm install -g pnpm@9.9.0
 
+      # 安装依赖
       - name: Install dependencies
         run: pnpm install
 

@@ -1,14 +1,16 @@
 /* Material Icons Font (for MD theme) */
 @font-face {
-  font-family: 'MaterialIcons';
+  font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
   src:
-    url(../fonts/material-icons.woff2) format('woff2'),
-    url(../fonts/material-icons.woff) format('woff');
+    local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://cdn.jsdelivr.net/npm/material-icons@1.13.12/iconfont/material-icons.woff2) format('woff2'),
+    url(https://cdn.jsdelivr.net/npm/material-icons@1.13.12/iconfont/material-icons-outlined.woff) format('woff');
 }
 .material-icons {
-  font-family: 'MaterialIcons';
+  font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
@@ -31,8 +33,8 @@
   font-style: normal;
   font-weight: 400;
   src:
-    url('../fonts/Framework7Icons-Regular.woff2') format('woff2'),
-    url('../fonts/Framework7Icons-Regular.woff') format('woff');
+    url('https://cdn.jsdelivr.net/npm/framework7-icons@5.0.5/fonts/Framework7Icons-Regular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/framework7-icons@5.0.5/fonts/Framework7Icons-Regular.woff') format('woff');
 }
 .f7-icons {
   font-family: 'Framework7 Icons';
