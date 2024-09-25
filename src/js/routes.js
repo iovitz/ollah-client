@@ -11,6 +11,7 @@ import NotFoundPage from "../pages/404.jsx";
 import LoginPage from "../pages/login/login.jsx";
 import DashboardPage from "../pages/dashboard/dashboard.jsx";
 import NewPage from "../pages/new/new.jsx";
+import Update from "@/pages/update/update.jsx";
 
 const routes = [
   {
@@ -32,6 +33,10 @@ const routes = [
   {
     path: "/about/",
     component: AboutPage,
+  },
+  {
+    path: "/update/",
+    component: Update,
   },
   {
     path: "/form/",

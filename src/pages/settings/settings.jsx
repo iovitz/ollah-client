@@ -45,7 +45,7 @@ const SettingsPage = () => {
         <ListItem link="#" title="联系我们">
           <Icon f7="waveform_path_ecg" slot="media" size={20} />
         </ListItem>
-        <ListItem link="#" title="更新日志">
+        <ListItem link="/update/" title="更新日志">
           <Icon f7="list_bullet_below_rectangle" slot="media" size={20} />
         </ListItem>
       </List>

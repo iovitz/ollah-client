@@ -41,7 +41,7 @@ const LoginPage = ({ f7router }) => {
   };
 
   return (
-    <Page noToolbar>
+    <Page name="login" noToolbar>
       <Navbar title="Login" backLink="Back" />
       <List strongIos outlineIos dividersIos>
         <ListInput

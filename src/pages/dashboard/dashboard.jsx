@@ -2,7 +2,7 @@ import React from "react";
 import { Page, Navbar, Button, NavTitle, NavRight } from "framework7-react";
 
 const DashboardPage = () => (
-  <Page noToolbar>
+  <Page name="dashboard" noToolbar>
     <Navbar sliding={false}>
       <NavTitle sliding>Dashboard</NavTitle>
       <NavRight>

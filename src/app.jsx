@@ -1,26 +1,10 @@
-import React, { useState, useEffect } from "react";
-
-import {
-  App,
-  Views,
-  View,
-  Toolbar,
-  Link,
-  LoginScreen,
-  LoginScreenTitle,
-  Page,
-} from "framework7-react";
-
+import React from "react";
+import { App, Views, View, Toolbar, Link } from "framework7-react";
 import routes from "./js/routes";
-import store, { USER_STORE_KEY } from "./js/store";
-// import { ws } from "./common/io/socket";
-import { http } from "./common/io/io";
-import style from "./style.module.css";
-import LS from "./common/local-storage/local-storage";
-import { logger } from "./common/logger/logger";
+import store from "./js/store";
+import Lunch from "./pages/lunch/lunch";
 
 const MyApp = () => {
-  const [loginScreenOpened, setLoginScreenOpened] = useState(true);
   const f7params = {
     name: "Ollah", // App name
     theme: "auto", // Automatic theme detection
@@ -33,36 +17,6 @@ const MyApp = () => {
     // App routes
     routes,
   };
-  http.initial({
-    baseURL: "/api",
-  });
-  // Socket链接
-  // ws.init();
-
-  useEffect(() => {
-    http
-      .request({
-        method: "get",
-        url: "/setting",
-      })
-      .then((data) => {
-        store.dispatch("setSetting", data);
-      });
-
-    try {
-      // 持久化存储的内容
-      const userInfo = LS.getItem(USER_STORE_KEY);
-      store.dispatch("setUser", JSON.parse(userInfo));
-    } catch (e) {
-      store.dispatch("setUser", {});
-      logger.error("Get User Info Fail");
-    }
-
-    setTimeout(() => {
-      setLoginScreenOpened(false);
-    }, 2000);
-    return () => {};
-  }, []);
   return (
     <App {...f7params}>
       {/* Views/Tabs container */}
@@ -100,20 +54,8 @@ const MyApp = () => {
         <View id="view-settings" name="settings" tab url="/settings/" />
       </Views>
 
-      <LoginScreen
-        className="demo-login-screen"
-        opened={loginScreenOpened}
-        onLoginScreenClosed={() => {
-          setLoginScreenOpened(false);
-        }}
-      >
-        <Page loginScreen>
-          <LoginScreenTitle>Luanching...</LoginScreenTitle>
-          <div className="flex justify-center">
-            <div className={style.loader} />
-          </div>
-        </Page>
-      </LoginScreen>
+      {/* Loading页面 */}
+      <Lunch />
     </App>
   );
 };

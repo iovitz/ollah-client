@@ -12,7 +12,7 @@ import {
 } from "framework7-react";
 
 const AboutPage = () => (
-  <Page noToolbar>
+  <Page name="about" noToolbar>
     <Navbar title="About" backLink="Back" />
     <BlockTitle>About My App</BlockTitle>
     <Block>
