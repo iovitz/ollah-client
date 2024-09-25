@@ -31,12 +31,11 @@ jobs:
       - name: Build Project
         run: pnpm build
 
-      - name: Update With FTP
-        uses: sebastianpopp/ftp-action@releases/v2
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: 'www'
-          remoteDir: 'wwwroot'
-          options: '--delete --asci'
+          local-dir: 'www'
+          server-dir: 'wwwroot'
