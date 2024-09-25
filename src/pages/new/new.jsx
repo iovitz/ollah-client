@@ -143,7 +143,7 @@ const NewPage = () => {
               >
                 <Button key={item.name} className="h-16 w-16 rounded-full">
                   <img
-                    src={`/icon/${item.icon}.svg`}
+                    src={`https://cdn.jsdelivr.net/npm/iovitz-cdn@1.0.5/ollah-icons/${item.icon}.svg`}
                     className="w-full"
                     alt=""
                   />
