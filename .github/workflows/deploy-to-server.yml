@@ -31,11 +31,11 @@ jobs:
       - name: Build Project
         run: pnpm build
 
-      - name: 📂 Sync files
+      - name: Sync Files To Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: 'www'
-          server-dir: 'wwwroot'
+          local-dir: '${{ secrets.FTP_LOCAL_DIR }}'
+          server-dir: '${{ secrets.FTP_SERVER_DIR }}'
