@@ -43,7 +43,7 @@ const LoginPage = ({ f7router }) => {
   return (
     <Page name="login" noToolbar>
       <Navbar title="Login" backLink="Back" />
-      <List strongIos outlineIos dividersIos>
+      <List strongIos outlineIos dividersIos formStoreData>
         <ListInput
           label="E-mail"
           type="email"
