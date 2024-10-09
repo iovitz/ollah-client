@@ -1,11 +1,24 @@
 import React from 'react';
-import { Button, NavBar } from 'antd-mobile'
+import { Button, NavBar, SafeArea } from 'antd-mobile'
+import { BrowserRouter } from 'react-router-dom';
+import ErrorHandler from './components/error-handler';
+import RouterElements from './pages/routes';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar >标题</NavBar>
-    </div>
+    <BrowserRouter>
+      <ErrorHandler>
+        <>
+          <div style={{ background: '#ace0ff' }}>
+            <SafeArea position='top' />
+          </div>
+          <RouterElements />
+          <div style={{ background: '#ffcfac' }}>
+            <SafeArea position='bottom' />
+          </div>
+        </>
+      </ErrorHandler>
+    </BrowserRouter>
   );
 }
 

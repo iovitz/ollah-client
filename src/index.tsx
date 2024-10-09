@@ -7,7 +7,5 @@ const root = ReactDOM.createRoot(
   document.getElementById('OLLAL_APP') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <App />
 );
