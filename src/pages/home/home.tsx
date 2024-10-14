@@ -1,12 +1,50 @@
-import { NavBar, NoticeBar, SearchBar } from 'antd-mobile';
-import React from 'react';
+import React from 'react'
+import style from './home.module.scss'
+import { TabBar } from 'antd-mobile'
+import { AppOutline, UnorderedListOutline, UserOutline } from 'antd-mobile-icons'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Home() {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const { t } = useTranslation()
+  const { pathname } = location
+
+  const setRouteActive = (value: string) => {
+    navigate(value)
+  }
+
+  const tabs = [
+    {
+      key: '/dashboard',
+      title: t('app.tabbar.dashboard'),
+      icon: <AppOutline />
+    },
+    {
+      key: '/todo',
+      title: t('app.tabbar.todos'),
+      icon: <UnorderedListOutline />
+    },
+    {
+      key: '/me',
+      title: '我的',
+      icon: <UserOutline />
+    }
+  ]
+
   return (
-    <>
-      <NavBar>标题</NavBar>
-      <NoticeBar content="默认" color="default" />
-      <SearchBar placeholder="请输入内容" />
-    </>
-  );
+    <div className={style.container}>
+      <div className={style.pages}>
+        <Outlet />
+      </div>
+      <div className={style.tabbar}>
+        <TabBar activeKey={pathname} onChange={value => setRouteActive(value)}>
+          {tabs.map(item => (
+            <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+          ))}
+        </TabBar>
+      </div>
+    </div>
+  )
 }

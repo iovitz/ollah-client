@@ -1,0 +1,9 @@
+{
+  "app": {
+    "tabbar": {
+      "dashboard": "仪表盘",
+      "todos": "待办",
+      "mine": "我的"
+    }
+  }
+}

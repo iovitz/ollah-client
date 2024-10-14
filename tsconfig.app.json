@@ -18,10 +18,13 @@
     "jsx": "react-jsx",
     /* Linting */
     "strict": true,
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   },
   "include": [
-    "src",
-    "src/main.tsx",
-    "App.tsx"
+    "src"
   ]
 }
