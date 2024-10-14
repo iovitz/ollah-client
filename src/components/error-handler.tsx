@@ -1,18 +1,17 @@
-
-import { get } from 'lodash'
-import React, { ErrorInfo, ReactElement } from 'react'
+import React, { ErrorInfo } from 'react';
 
 interface ErrorHandlerProp {
-  children: JSX.Element
+  children: JSX.Element;
 }
+
 export default class ErrorHandler extends React.PureComponent<ErrorHandlerProp> {
   constructor(props: ErrorHandlerProp) {
-    super(props)
+    super(props);
   }
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('!!!React Did Catch', error, info)
+    console.error('!!!React Did Catch', error, info);
   }
   render() {
-    return <>{this.props.children || null}</>
+    return <>{this.props.children || null}</>;
   }
 }

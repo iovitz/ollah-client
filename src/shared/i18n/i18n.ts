@@ -1,7 +1,7 @@
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import LanguageDetector from 'i18next-browser-languagedetector'
-import Backend from 'i18next-http-backend'
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-http-backend';
 
 i18n
   .use(Backend)
@@ -16,12 +16,13 @@ i18n
     debug: true,
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false,
-    },
-  })
+      escapeValue: false
+    }
+  });
 
-;(window as any).t = function t(key: string) {
-  return i18n.t(key)
-}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(window as any).t = function t(key: string) {
+  return i18n.t(key);
+};
 
-export default i18n
+export default i18n;
