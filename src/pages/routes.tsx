@@ -15,6 +15,7 @@ export default function AppRoutes() {
       children: [
         {
           path: '',
+          // 重定向解决方案
           element: <Navigate to="/dashboard" />
         },
         {
