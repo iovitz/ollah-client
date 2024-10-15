@@ -1,4 +1,4 @@
-.container {
+.home-container {
   height: 100%;
   width: 100%;
   display: flex;
@@ -6,7 +6,7 @@
   .tabbar {
     height: min-content;
   }
-  .pages {
+  .view-wrapper {
     flex: 1;
   }
 }

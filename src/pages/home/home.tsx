@@ -34,8 +34,8 @@ export default function Home() {
   ]
 
   return (
-    <div className={style.container}>
-      <div className={style.pages}>
+    <div className={style['home-container']}>
+      <div className={style['view-wrapper']}>
         <Outlet />
       </div>
       <div className={style.tabbar}>
